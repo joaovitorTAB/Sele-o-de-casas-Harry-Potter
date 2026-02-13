@@ -1,0 +1,76 @@
+#Projeto simples em python para selecionar qual das casas de harry potter o usuario vai ficar
+#Conceitos usados: bibliotecas, variaveis, if/elif/else, operadores lógicos e matemática
+import random
+
+grifinoria = 0 
+corvinal = 0
+lufa_lufa = 0
+sonserina = 0
+
+
+q1 = int(input('Do you like Dawn or dusk?\n1)Dawn\n2)Dusk\n'))
+
+if q1 == 1:
+  grifinoria += 1
+  corvinal += 1
+elif q1 == 2:
+  lufa_lufa += 1
+  sonserina += 1
+else:
+  print('Entrada incorreta')
+
+
+
+q2 = int(input('When I’m dead, I want people to remember me as:\n1)The good\n2)The great\n3)The wise\n4)The bold\n'))
+
+if q2 == 1:
+  lufa_lufa += 3
+elif q2 == 2:
+  sonserina += 3
+elif q2 == 3:
+  corvinal +=  3
+elif q2 == 4:
+  grifinoria += 3
+else:
+  print('Entrada incorreta')
+
+
+q3 = int(input('Which kind of instrument most pleases your ear?\n1)The violin\n2)The trumpet\n3)The piano\n4)The drum\n'))
+
+if q3 == 1:
+  sonserina += 3
+elif q3 == 2:
+  lufa_lufa += 3
+elif q3 == 3:
+  corvinal += 3
+elif q3 == 4:
+  grifinoria += 3
+else:
+  print('Entrada incorreta')
+
+
+print('Estas são as pontuações finais de cada casa:\nsonserina = {}\ncorvinal = {}\ngrifinoria = {}\nlufa_lufa = {}'.format(sonserina, corvinal, grifinoria, lufa_lufa))
+print('Esta na hora do chapeu decidir...')
+
+if grifinoria > sonserina and grifinoria > corvinal and grifinoria > lufa_lufa:
+  print('Você vai para grifinoria')
+elif corvinal > grifinoria and corvinal > lufa_lufa and corvinal > sonserina:
+  print('A casa escolhida é corvinal')
+elif sonserina > grifinoria and sonserina > corvinal and sonserina > lufa_lufa:
+  print('Ira para sonserina')
+elif lufa_lufa > grifinoria and lufa_lufa > corvinal and lufa_lufa > sonserina:
+  print('Bem-vindo a lufa_lufa')
+else:
+  print('Empate entre as casas, será decidido no dado de 5 lados:')
+  i = random.randint(1,5)
+  print('O lado do dado caiu em {}\nVocê irá para:'.format(i))
+  if i == 1:
+    print('Sonserina')
+  elif i == 2:
+    print('Corvinal')
+  elif i == 3:
+    print('Grifinoria')
+  elif i == 4:
+    print('Lufa_lufa')
+  elif i == 5:
+    print('Você será expulso, pois o seu azar lhe tirou tudo')
